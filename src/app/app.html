@@ -1,5 +1,7 @@
 <div>count: {{count()}}</div>
 
+<app-todoitemlist [data]="todos()"></app-todoitemlist>
+
 @for(todo of todos(); track todo.id) {
   <div class="todo">title: {{todo.title}}, completed: {{todo.completed}}</div>
 }
