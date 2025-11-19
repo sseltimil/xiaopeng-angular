@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Todoitemlist } from './components/todoitemlist/todoitemlist';
+import { Todoitem } from './components/todoitem/todoitem';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Todoitemlist],
+  imports: [RouterOutlet, Todoitemlist, Todoitem],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -24,7 +25,8 @@ export class App {
   }
 
   reset() {
-    this.todos.update(todos => todos.map(t => ({ ...t, completed: false })));
+    this.todos.update(todos => todos.map(t => ({ ...t, completed: true })));
   }
 
 }
+

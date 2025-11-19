@@ -1,1 +1,7 @@
-<p>todoitemlist works!</p>
+
+<h3>TodoItemList Component</h3>
+
+@for (item of data; track item.id) {
+  <app-todoitem [data]="item"></app-todoitem>
+}
+

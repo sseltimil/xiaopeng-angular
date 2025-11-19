@@ -1,15 +1,17 @@
-import { Component, input, OnInit } from '@angular/core';
+
+
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Todoitem } from '../todoitem/todoitem'; 
 
 @Component({
   selector: 'app-todoitemlist',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, Todoitem],
   templateUrl: './todoitemlist.html',
-  styleUrl: './todoitemlist.scss',
+  styleUrl: './todoitemlist.scss'
 })
-export class Todoitemlist implements OnInit {
-  data = input();
-
-  ngOnInit() {
-    console.log(this.data())
-  }
+export class Todoitemlist {
+  @Input() data: any[] = [];
 }
+

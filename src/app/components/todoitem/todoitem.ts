@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todoitem',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './todoitem.html',
-  styleUrl: './todoitem.scss',
+  styleUrl: './todoitem.scss'
 })
 export class Todoitem {
-
+  @Input() data: any;
 }
