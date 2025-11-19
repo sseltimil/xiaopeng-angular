@@ -1,8 +1,12 @@
-
-
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todoitem } from '../todoitem/todoitem'; 
+
+export type Todo = {
+  id: number;
+  title: string;
+  completed: boolean;
+};
 
 @Component({
   selector: 'app-todoitemlist',
@@ -12,6 +16,6 @@ import { Todoitem } from '../todoitem/todoitem';
   styleUrl: './todoitemlist.scss'
 })
 export class Todoitemlist {
-  @Input() data: any[] = [];
+  @Input() data!: Todo[];
 }
 

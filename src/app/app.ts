@@ -3,6 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { Todoitemlist } from './components/todoitemlist/todoitemlist';
 import { Todoitem } from './components/todoitem/todoitem';
 
+export type Todo = {
+  id: number;
+  title: string;
+  completed: boolean;
+};
+
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Todoitemlist, Todoitem],
@@ -12,7 +19,7 @@ import { Todoitem } from './components/todoitem/todoitem';
 export class App {
   count = signal(0);
 
-  todos = signal([
+  todos = signal<Todo[]>([
     { id: 1, title: 'buy milk', completed: false },
     { id: 2, title: 'todo 2', completed: true },
     { id: 3, title: 'todo 3', completed: false }

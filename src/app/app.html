@@ -8,9 +8,10 @@
 
 @for(item of todos(); track item.id){
   <app-todoitem [data] = "item"></app-todoitem>
-} -->
+}  -->
 
 <app-todoitemlist [data]="todos()"></app-todoitemlist>
+
 
 <button (click)="increment()">increment</button>
 <button (click)="reset()">reset</button>
